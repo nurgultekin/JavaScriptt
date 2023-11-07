@@ -1,3 +1,15 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <p id="demo">Here comes the script output</p>
+  
 <script>
   // This task pulls together the previous two tasks to practice a more "real" data
   // structure you'd see regularly as a web developer.
@@ -18,13 +30,19 @@
     console.log(`Name: ${product.name}, Brand: ${product.brand}`);
   });
 
+  document.getElementById("demo").textContent = products.join(", ");
+
   // Task 2: Use .map() to iterate over the products and return the model from
   // each product. Assign the result to a variable called `models` and use console.log()
   // to print it.
 
   const models = products.map((product) => product.model);
 
-  console.log("Models: ", models);
+const outputText = "Models: " + models.join(", ");
+document.getElementById("demo").textContent = outputText;
 </script>
 
-<p>Open the console in the browser to see the output of this script.</p>
+<span id="demo"></span></p>
+
+</body>
+</html>
